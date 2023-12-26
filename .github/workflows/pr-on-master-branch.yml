@@ -1,5 +1,5 @@
 # Unique name for this workflow
-name: Validate PR on master branch
+name: Validate PR on main branch
 
 # Definition when the workflow should run
 on:
@@ -7,7 +7,7 @@ on:
       # This workflow will run when a pull request is opened, or when a commit is pushed
       # to a branch that has an existing pull request
       types: [opened, synchronize]
-      branches: [ master ]
+      branches: [ main ]
       # We only care about changes to the force-app directory. This prevents the job from running
       # when changing non-salesforce files (like this yml file).
       paths:
