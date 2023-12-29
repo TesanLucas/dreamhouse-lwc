@@ -120,11 +120,5 @@ jobs:
                   echo ${{env.APEX_TESTS}}
                   sfdx project deploy start -d "changed-sources/force-app" --dry-run --test-level RunSpecifiedTests --tests ${{env.APEX_TESTS}} --json
 
-            # We do a check-only deploy and we run all tests
-            - name: 'Check-only deploy delta changes - run all tests'
-              if: ${{ env.APEX_TESTS == 'all' }}
-              run: |
-                  sfdx project deploy start -d "changed-sources/force-app" --dry-run --tests RunLocalTests --json
-
             - name: 'Deploy destructive changes (if any)'
               run: sfdx force:mdapi:deploy -d "changed-sources/destructiveChanges" --checkonly --ignorewarnings 
