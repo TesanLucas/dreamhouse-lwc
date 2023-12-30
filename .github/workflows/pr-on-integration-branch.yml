@@ -54,7 +54,8 @@ jobs:
               # were using a normal env variable, its value would not be available outside this step.
               run: |
                   echo $PAYLOAD > ./pr_body.txt
-                  node ./parsePR.js              
+                  node ./parsePR.js
+                  cat testsToRun.txt
                   TESTS=$(cat testsToRun.txt)       
                   echo "APEX_TESTS=$TESTS" >> $GITHUB_ENV
                   
