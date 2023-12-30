@@ -32,6 +32,7 @@ private with sharing class FileUtilitiesTest {
         System.debug('print test3!');
         System.debug('print test44!');
         System.debug('print test5!');
+        System.debug('print test6!');
         System.debug('change class 1');
 
         try {
