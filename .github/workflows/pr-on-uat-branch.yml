@@ -127,4 +127,4 @@ jobs:
                   sfdx project deploy start -d "changed-sources/force-app" --dry-run --test-level RunLocalTests  --json
 
             - name: 'Deploy destructive changes (if any)'
-              run: sfdx force:mdapi:deploy -d "changed-sources/destructiveChanges" --checkonly --ignorewarnings 
+              run: sfdx project deploy start --metadata-dir "changed-sources/destructiveChanges" --dry-run --ignorewarnings 
