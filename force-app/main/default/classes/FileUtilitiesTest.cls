@@ -31,6 +31,7 @@ private with sharing class FileUtilitiesTest {
         System.debug('print test2!');
         System.debug('print test3!');
         System.debug('print test44!');
+        System.debug('print test5!');
 
         try {
             // WHEN
