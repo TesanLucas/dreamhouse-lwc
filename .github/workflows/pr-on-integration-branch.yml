@@ -54,7 +54,8 @@ jobs:
               # were using a normal env variable, its value would not be available outside this step.
               run: |
                   echo $PAYLOAD > ./pr_body.txt
-                  node ./parsePR.js              
+                  node ./parsePR.js
+                  cat testsToRun.txt
                   TESTS=$(cat testsToRun.txt)       
                   echo "APEX_TESTS=$TESTS" >> $GITHUB_ENV
                   
@@ -96,7 +97,8 @@ jobs:
             - name: 'Create delta packages for new, modified or deleted metadata'
               run: | 
                   mkdir changed-sources
-                  sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output changed-sources/ --generate-delta --source force-app/ 
+                  sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output changed-sources/ --generate-delta --source force-app/
+                  ls changed-sources/force-app/main
 
             # Scan the code in the delta directory by using sfdx scanner. Output the results of the scan in a new file
             # called apexScanResults.sarif

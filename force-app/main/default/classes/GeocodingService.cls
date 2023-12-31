@@ -6,6 +6,7 @@ public with sharing class GeocodingService {
         List<GeocodingAddress> addresses
     ) {
         List<Coordinates> computedCoordinates = new List<Coordinates>();
+        System.debug('change class 2');
 
         for (GeocodingAddress address : addresses) {
             String geocodingUrl = BASE_URL;
